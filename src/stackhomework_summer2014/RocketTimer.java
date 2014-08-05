@@ -30,7 +30,8 @@ System.out.println ( "Check ignition and may gods love be with you.\n\n");
 
 //while ( !rocketTimer.empty() )
 //while ( rocketTimer.size() > 0)
-while ( !rocketTimer.isEmpty() )
+//while ( !rocketTimer.isEmpty() )
+while ( rocketTimer.contains(1) )
 {
 System.out.print ( rocketTimer.pop() );
 System.out.print ( ',' );
