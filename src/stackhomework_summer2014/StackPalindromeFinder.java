@@ -66,7 +66,7 @@ for(String phrase : testPhrase)  {
  * See the PDF file for some starting code. 
 */
     
-    
+/*
 public static boolean isPalindrome(String text) {
 
 int length = text.length();
@@ -117,8 +117,36 @@ else {
 } //  end of outer else block
 
 } // end of isPalindrome
+*/
 
-    
+// Stack version of isPalindrome() method.
+public static boolean isPalindrome(String text) {
+text = text.toUpperCase(); // Make all letters capital.
+int length = text.length();
+char nextCharacter;
+// Check each character in the test phrase.
+// Only keep actual letters.
+// Then push them onto a stack.
+// We will make two copies, so we have one to spare.
+// That spare stack will be consumed as we make a reverse stack.
+Stack<Character> stack = new Stack<Character>();
+Stack<Character> stackCopy = new Stack<Character>();
+Stack<Character> reverseStack = new Stack<Character>();
+for (int i = 0 ; i < length ; i++) {
+nextCharacter = text.charAt(i);
+if ( Character.isLetter(nextCharacter) )
+{
+    // push each character onto stack && stackCopy
+    stack.push( new Character(nextCharacter));
+    stackCopy.push( new Character(nextCharacter));
+} // end of if-block to push actual letters to the stacks.
+} // end of for loop
+for(int i=1; i <= stack.size(); i++ ) { reverseStack.push(stackCopy.pop()); }
+if( stack.equals(reverseStack) ) return true;
+else return false;
+} // end of stack version of isPalindrome
+
+        
 
 
 } // end of class
