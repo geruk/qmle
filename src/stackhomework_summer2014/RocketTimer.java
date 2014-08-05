@@ -28,7 +28,8 @@ System.out.println ( "Check ignition and may gods love be with you.\n\n");
 // In the homework, you will try various while loop controls. 
 // Try size(), isEmpty(), contains() and search(). 
 
-while ( !rocketTimer.empty() )
+//while ( !rocketTimer.empty() )
+while ( rocketTimer.size() > 0)
 {
 System.out.print ( rocketTimer.pop() );
 System.out.print ( ',' );
