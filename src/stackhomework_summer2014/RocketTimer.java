@@ -29,7 +29,8 @@ System.out.println ( "Check ignition and may gods love be with you.\n\n");
 // Try size(), isEmpty(), contains() and search(). 
 
 //while ( !rocketTimer.empty() )
-while ( rocketTimer.size() > 0)
+//while ( rocketTimer.size() > 0)
+while ( !rocketTimer.isEmpty() )
 {
 System.out.print ( rocketTimer.pop() );
 System.out.print ( ',' );
