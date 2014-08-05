@@ -27,7 +27,7 @@ weddingInvitation.push("Mom");  weddingInvitation.push("Dad"); // Joseph has add
 // 1. Using an enhanced for loop, add all Mary's friends to her stack of wedding invitations.
 // Use the push method. Replace the null statement. 
 
-for (String guest: friendsOfMary)  ;   // Null statement. 
+for (String guest: friendsOfMary) weddingInvitation.push(guest);
         
         
 System.out.println("\n\nHere is the stack of wedding invitations: \n\t" + weddingInvitation);
@@ -35,7 +35,7 @@ System.out.println("\n\nHere is the stack of wedding invitations: \n\t" + weddin
 
 //2. Use the size() method to print out the number of people Mary has invited.
         
-int numberOfGuests = 0; // Replace this stub. 
+int numberOfGuests = weddingInvitation.size(); // Replace this stub. 
         
 System.out.printf("\nMary has invited %d guests to their wedding.\n", numberOfGuests);
         
@@ -44,7 +44,7 @@ System.out.printf("\nMary has invited %d guests to their wedding.\n", numberOfGu
 // 3. Use the peek() method to find and print out the name on the top of the stack.
 // This is Mary's former boyfriend or "old flame". 
         
-        String oldFlame = null; // Replace this stub using the peek method. 
+        String oldFlame = weddingInvitation.peek(); // Replace this stub using the peek method. 
         
         System.out.println("\nMary's old flame is named: " + oldFlame);
  
@@ -59,11 +59,15 @@ Stack<String>  disinvite = new Stack<>(); // Note use of diamond operator.
 //a. Anthony, Arnold and Eliot have all been involved in political scandals.
 // Add them to the stack of disinvitees using the push() method. 
         disinvite.push("Anthony");    // Disinvite the other two. 
+        disinvite.push("Arnold");
+        disinvite.push("Eliot");
         
 //b. A-Rod and Lance have both been involved in doping scandals.
 // Add them to the stack of disinvitees using the add() method,
 // which is inherited from the Vector class. 
-// Disinvite these guys as well        
+// Disinvite these guys as well  
+        disinvite.add("A-Rod");
+        disinvite.add("Lance");
         
 //. Print out all names in the stack of people to disinvite from the wedding.
         System.out.println("\nJoseph wants to disinvite the following people: \n\t" + disinvite);
@@ -74,7 +78,7 @@ Stack<String>  disinvite = new Stack<>(); // Note use of diamond operator.
 // from the Stack weddingInvitation. 
         
 
-        
+        weddingInvitation.removeAll(disinvite);
         
         
         
@@ -86,7 +90,8 @@ Stack<String>  disinvite = new Stack<>(); // Note use of diamond operator.
 // Joseph suspects Mary never really got over loosing Adonis. 
 // Better remove him now using the remove() method.
 // Also toss out Hugh, who is a notorious playboy.
-        
+        weddingInvitation.remove("Adonis");
+        weddingInvitation.remove("Hugh");
 System.out.println("Now, the remaining invitees are just: \n\t" + weddingInvitation);
       
 
