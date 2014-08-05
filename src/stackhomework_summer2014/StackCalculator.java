@@ -51,6 +51,13 @@ evaluate(myStack);}
 if( nextTerm.equals("-") )
 {nextTerm = myStack.pop(); result = -Double.parseDouble(nextTerm) +
 evaluate(myStack);}
+if( nextTerm.equals("*") )
+{nextTerm = myStack.pop(); result = Double.parseDouble(nextTerm) *
+evaluate(myStack);}
+if( nextTerm.equals("/") )
+{nextTerm = myStack.pop(); result = evaluate(myStack)/Double.parseDouble(nextTerm) ;}
+if( nextTerm.equals("^") )
+{nextTerm = myStack.pop(); result = Math.pow(evaluate(myStack), Double.parseDouble(nextTerm)) ;}
 //3. Add more operators here.
 return result;
 } // end of method evaluate
